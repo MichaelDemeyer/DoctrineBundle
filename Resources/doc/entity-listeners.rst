@@ -6,20 +6,17 @@ listener resolver. You can tag your entity listeners and they will automatically
 be added to the resolver. Use the entity_manager attribute to specify which
 entity manager it should be registered with. Example:
 
-.. configuration-block::
-
     .. code-block:: yaml
 
         services:
             user_listener:
                 class: \UserListener
                 tags:
-                    - { name: doctrine.orm.entity_listener }
--
-                        name: doctrine.orm.entity_listener
-                        event: preUpdate
-                        entity: App\Entity\User
-                        entity_manager: custom
+                    name: doctrine.orm.entity_listener
+                    event: preUpdate
+                    entity: App\Entity\User
+                    entity_manager: custom
+                    
     .. code-block:: xml
 
         <?xml version="1.0" ?>
